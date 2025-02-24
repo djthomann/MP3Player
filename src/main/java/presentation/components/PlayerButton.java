@@ -38,7 +38,12 @@ public class PlayerButton extends Button {
 	public PlayerButton(int size) {
         super();
         
-        this.getStylesheets().add(Util.getResourcePath("styles/button.css"));
+        String cssPath = Util.getResourceUrl("styles/button.css");
+		if (cssPath != null) {
+			this.getStylesheets().add(cssPath);
+		} else {
+			System.err.println("Stylesheet nicht gefunden!");
+		}
         
         this.size = size;
 
@@ -77,22 +82,23 @@ public class PlayerButton extends Button {
     }
 	
 	public void putImages() {
-		imageMap.put("play", new Image("file:src/resources/icons/play.png"));
-		imageMap.put("play_white", new Image("file:src/resources/icons/play_white.png"));
-        imageMap.put("pause", new Image("file:src/resources/icons/pause.png"));
-        imageMap.put("pause_white", new Image("file:src/resources/icons/pause_white.png"));
-        imageMap.put("skip", new Image("file:src/resources/icons/forward_skip.png"));
-        imageMap.put("rewind", new Image("file:src/resources/icons/backward_skip.png"));
-        imageMap.put("minVolume", new Image("file:src/resources/icons/volume_min.png"));
-        imageMap.put("mediumVolume", new Image("file:src/resources/icons/volume_medium.png"));
-		imageMap.put("maxVolume", new Image("file:src/resources/icons/volume_max.png"));
-		imageMap.put("mute", new Image("file:src/resources/icons/muted.png"));
-		imageMap.put("repeatQueue", new Image("file:src/resources/icons/repeat_queue.png"));
-		imageMap.put("repeatSong", new Image("file:src/resources/icons/repeat_song.png"));
-		imageMap.put("shuffle", new Image("file:src/resources/icons/shuffle.png"));
-		imageMap.put("playlist", new Image("file:src/resources/icons/playlist.png"));
-		imageMap.put("gallery", new Image("file:src/resources/icons/gallery.png"));
+		imageMap.put("play", new Image("file:" + Util.getResourcePath("icons/play.png")));
+		imageMap.put("play_white", new Image("file:" + Util.getResourcePath("icons/play_white.png")));
+		imageMap.put("pause", new Image("file:" + Util.getResourcePath("icons/pause.png")));
+		imageMap.put("pause_white", new Image("file:" + Util.getResourcePath("icons/pause_white.png")));
+		imageMap.put("skip", new Image("file:" + Util.getResourcePath("icons/forward_skip.png")));
+		imageMap.put("rewind", new Image("file:" + Util.getResourcePath("icons/backward_skip.png")));
+		imageMap.put("minVolume", new Image("file:" + Util.getResourcePath("icons/volume_min.png")));
+		imageMap.put("mediumVolume", new Image("file:" + Util.getResourcePath("icons/volume_medium.png")));
+		imageMap.put("maxVolume", new Image("file:" + Util.getResourcePath("icons/volume_max.png")));
+		imageMap.put("mute", new Image("file:" + Util.getResourcePath("icons/muted.png")));
+		imageMap.put("repeatQueue", new Image("file:" + Util.getResourcePath("icons/repeat_queue.png")));
+		imageMap.put("repeatSong", new Image("file:" + Util.getResourcePath("icons/repeat_song.png")));
+		imageMap.put("shuffle", new Image("file:" + Util.getResourcePath("icons/shuffle.png")));
+		imageMap.put("playlist", new Image("file:" + Util.getResourcePath("icons/playlist.png")));
+		imageMap.put("gallery", new Image("file:" + Util.getResourcePath("icons/gallery.png")));
 	}
+	
 	
 	public void setImage(String path) {
 		backgroundImage = new Image("file:src/icons/" + path);

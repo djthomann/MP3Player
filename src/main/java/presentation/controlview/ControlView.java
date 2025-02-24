@@ -118,7 +118,12 @@ public class ControlView extends GridPane {
 		
 		public VolumeControls() {
 			
-			this.getStylesheets().add(Util.getResourcePath("styles/slider.css"));
+			String cssPath = Util.getResourceUrl("styles/slider.css");
+			if (cssPath != null) {
+				this.getStylesheets().add(cssPath);
+			} else {
+				System.err.println("Stylesheet nicht gefunden!");
+			}
 			
 			setAlignment(Pos.CENTER_RIGHT);
 			

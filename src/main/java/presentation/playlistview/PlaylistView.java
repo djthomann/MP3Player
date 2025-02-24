@@ -55,7 +55,12 @@ public class PlaylistView extends BorderPane {
 		
 		public SonglistView() {
 			
-			this.getStylesheets().add(Util.getResourcePath("styles/scroll.css"));
+			String cssPath = Util.getResourceUrl("styles/scroll.css");
+			if (cssPath != null) {
+				this.getStylesheets().add(cssPath);
+			} else {
+				System.err.println("Stylesheet nicht gefunden!");
+			}
 	
 			songlist = new VBox();
 			songlist.setPadding(new Insets(util.STANDARD_PADDING));

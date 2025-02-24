@@ -47,8 +47,13 @@ public class ImageButton<T> extends Button {
 	
 	public ImageButton(T object, int index, Image image, int size) {
 		
-		this.getStylesheets().add(Util.getResourcePath("styles/button.css"));
-		
+		String cssPath = Util.getResourceUrl("styles/button.css");
+		if (cssPath != null) {
+			this.getStylesheets().add(cssPath);
+		} else {
+			System.err.println("Stylesheet nicht gefunden!");
+		}
+
 		myObject = object;
 		
 		this.index = index;

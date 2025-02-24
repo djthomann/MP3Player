@@ -41,7 +41,12 @@ public class CoverView extends BorderPane {
 		
 		public ArtistInfo() {
 			
-			this.getStylesheets().add(Util.getResourcePath("styles/text.css"));
+			String cssPath = Util.getResourceUrl("styles/text.css");
+			if (cssPath != null) {
+				this.getStylesheets().add(cssPath);
+			} else {
+				System.err.println("Stylesheet nicht gefunden!");
+			}
 			
 			title = new Text(track.getTitle());
 			artist = new Text(track.getArtist());

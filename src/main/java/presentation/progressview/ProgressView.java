@@ -20,8 +20,18 @@ public class ProgressView extends HBox {
 	
 	public ProgressView() {
 		
-		this.getStylesheets().add(Util.getResourcePath("styles/progressBar.css"));
-		this.getStylesheets().add(Util.getResourcePath("styles/text.css"));
+		String cssPath = Util.getResourceUrl("styles/progressBar.css");
+		if (cssPath != null) {
+			this.getStylesheets().add(cssPath);
+		} else {
+			System.err.println("Stylesheet nicht gefunden!");
+		}
+		cssPath = Util.getResourceUrl("styles/text.css");
+		if (cssPath != null) {
+			this.getStylesheets().add(cssPath);
+		} else {
+			System.err.println("Stylesheet nicht gefunden!");
+		}
 		
 		setAlignment(Pos.CENTER);
 		
