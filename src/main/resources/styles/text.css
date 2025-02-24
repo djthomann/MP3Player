@@ -1,0 +1,10 @@
+Text {
+	-fx-fill: lightgray;
+	-fx-font-size: 23;
+	-fx-font-family: sans-serif;
+}
+
+.headline {
+	-fx-font-size: 25;
+	-fx-font-weight: 700;
+}

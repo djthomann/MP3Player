@@ -1,0 +1,18 @@
+/*#progress-bar .track {
+	-fx-background-color: linear-gradient(to right, aquamarine 0%, transparent 0%);
+}*/
+
+.progress-bar .track {
+    -fx-background-color: #555; 
+    -fx-background-radius: 25;
+}
+
+.progress-bar:hover {
+    -fx-cursor: hand;
+}
+
+.progress-bar .bar {
+    -fx-background-color: aquamarine; 
+    -fx-background-insets: 10;
+    -fx-background-radius: 25;
+}
