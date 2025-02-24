@@ -22,10 +22,17 @@ public class PlaylistManager {
 	private PlaylistManager() {
 		playlists = new ArrayList<>();
 	
-		String path = Util.getResourcePath("playlists/test.m3u");
+		String path = Util.getResourcePath("playlists/Diverses.m3u");
 		if (path != null) {
 			loadPlaylist(path);
-			System.out.println("Playlist geladen: " + path);
+			// System.out.println("Playlist geladen: " + path);
+		} else {
+			System.err.println("Playlist nicht gefunden!");
+		}
+		path = Util.getResourcePath("playlists/(Minimal) Techno.m3u");
+		if (path != null) {
+			loadPlaylist(path);
+			// System.out.println("Playlist geladen: " + path);
 		} else {
 			System.err.println("Playlist nicht gefunden!");
 		}
