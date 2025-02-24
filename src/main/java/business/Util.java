@@ -72,6 +72,15 @@ public class Util {
             return null;
         }
     }
+
+	public static String getResourceUrl(String resourcePath) {
+		URL resourceUrl = Util.class.getClassLoader().getResource(resourcePath);
+		if (resourceUrl == null) {
+			System.err.println("Resource not found: " + resourcePath);
+			return null;
+		}
+		return resourceUrl.toExternalForm(); // Gibt die URL als String zurück
+	}	
 	
 	public String formatSeconds(int seconds) {
 		return String.format("%02d:%02d", seconds / 60, seconds % 60);
