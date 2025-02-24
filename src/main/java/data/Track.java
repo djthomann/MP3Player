@@ -27,7 +27,7 @@ public class Track {
 	public Track(String soundFile) {
 		
 		this.soundFile = Util.getResourcePath(soundFile);
-		System.out.println(soundFile);
+		// System.out.println(soundFile);
 		
 		Mp3File mp3file = null;
 		try {

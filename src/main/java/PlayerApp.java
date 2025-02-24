@@ -17,7 +17,7 @@ public class PlayerApp extends Application {
 	private static Util util = Util.getInstance();
 
 	public final String APPLICATION_NAME = "MP3-Player von David Thomann";
-	public final String APP_ICON_PATH = "src/resources/icons/app_icon_aquamarine.png";
+	public final String APP_ICON_PATH = Util.getResourcePath("icons/app_icon_aquamarine.png");
 	
 	private Parent parent;
 	private Stage primaryStage;

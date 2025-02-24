@@ -30,7 +30,7 @@ public class ImageButton<T> extends Button {
 	}
 	
 	public ImageButton(T object, int size) {
-		this(object, 0, "file:src/resources/images/default_playlist_icon.jpg", size);
+		this(object, 0, "file:" + DEFAULT_ICON_PATH, size);
 	}
 	
 	public ImageButton(T object, int index, String path) {

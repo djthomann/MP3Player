@@ -25,13 +25,13 @@ public class Playlist {
 	private String m3uFile;
 	
 	private Image cover;
-	private static String STANDARD_PLAYLIST_COVER_PATH = "src/resources/images/default_playlist_icon.jpg";
+	private static String STANDARD_PLAYLIST_COVER_PATH = Util.getResourcePath("images/default_playlist_icon.jpg");
 	
 	private SimpleBooleanProperty shuffled;
 	
 	public Playlist(String m3uFile) {
 
-		System.out.println(m3uFile);
+		// System.out.println(m3uFile);
 
 		this.m3uFile = m3uFile;
 		
@@ -43,9 +43,11 @@ public class Playlist {
 		shuffled = new SimpleBooleanProperty(false);
 		
 		List<String> paths = readM3UFile(m3uFile);
-		
-		if(paths.get(0).startsWith("file")) {
-			cover = new Image(paths.get(0));
+
+		if(paths.get(0).startsWith("images")) {
+			String path = paths.get(0);
+			System.out.println("Path: " + path);
+			cover = new Image("file:" + Util.getResourcePath(paths.get(0)));
 			paths.remove(0);
 		} else {
 			cover = new Image("file:" + STANDARD_PLAYLIST_COVER_PATH);
